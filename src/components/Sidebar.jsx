@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { FiSearch } from 'react-icons/fi';
 const Sidebar = () => {
   const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(true);
   const [isBatteryMenuOpen, setIsBatteryMenuOpen] = useState(true);
@@ -13,7 +13,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="p-4 border-r w-1/3 sm:w-1/4">
+    <div className="px-16 border-r w-1/3 sm:w-1/4">
       {/* Brand Section */}
       <div className="mb-6">
         <h3
@@ -25,6 +25,7 @@ const Sidebar = () => {
         </h3>
         {isBrandMenuOpen && (
           <div className="flex flex-col gap-2">
+            
             <label>
               <input type="checkbox" /> Apple
             </label>

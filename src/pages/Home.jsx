@@ -109,50 +109,87 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section 1 */}
-      <div className="bg-[#211C24] flex flex-col sm:flex-row gap-6 sm:gap-24 px-6 sm:px-20 py-12 sm:mt-44">
+      <div className="bg-[#211C24] flex flex-col sm:flex-row gap-6 sm:gap-24 px-6 sm:px-20 py-12 ">
         <div className="text-center sm:text-left flex flex-col gap-4 w-full sm:w-[90vh]">
           <p className="text-[#909090]">Pro.Beyond.</p>
           <h1 className="text-3xl sm:text-5xl text-white">IPhone 14 Pro</h1>
-          <p className="text-[#909090] text-sm">
+          <p className="text-[#909090] text-sm sm:text-base">
             Created to change everything for the better. For everyone
           </p>
           <button className="text-white px-6 py-2 border-2 rounded-sm w-1/2 sm:w-1/3 mt-4">
             Shop Now
           </button>
         </div>
-        <div className="mt-4 sm:mt-0">
-          <img src={iphoneimage} alt="iPhone Image" />
+        <div className="mt-4 sm:mt-0 flex justify-center sm:justify-start">
+          <img
+            src={iphoneimage}
+            alt="iPhone Image"
+            className="w-full sm:w-auto"
+          />
         </div>
       </div>
 
       {/* Hero Section 2 */}
-      <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12 px-6 sm:px-20 py-12">
+      <div className="flex flex-col sm:flex-row items-center    ">
         <div className="w-full sm:w-3/4">
+          <div className="flex">
+            <img src={p1} alt="Product Image" className="w-full h-[50vh]" />
+            <div className="flex flex-col pt-20 gap-4">
+              <h1 className="text-2xl sm:text-4xl font-semibold text-center sm:text-left">
+                Playstation 5
+              </h1>
+              <p className="text-[#909090] text-sm sm:text-base text-center sm:text-left ">
+                Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O
+                will redefine your PlayStation experience.
+              </p>
+            </div>
+          </div>
+          <div className="flex  ">
+            <div className="flex gap-4">
+              <img src={p2} alt="Product Image" className="w-1/3 h-[50vh]" />
+              <div className="flex flex-col pt-20 gap-4">
+                <h1 className="text-xl font-semibold text-center sm:text-left">
+                  Apple AirPods Max
+                </h1>
+                <p className="text-[#909090] text-sm sm:text-base text-center sm:text-left ">
+                  Computational audio. Listen, it's powerful
+                </p>
+              </div>
+              <div className="flex bg-[#353535] gap-4">
+                <img src={p3} alt="Product Image" className="w-1/3 h-[50vh]" />
+                <div className="flex flex-col pt-20 gap-4">
+                  <h2 className=" text-xl font-semibold text-center sm:text-left text-white">
+                    Apple Vision Pro
+                  </h2>
+                  <p className="text-[#909090] text-sm sm:text-base text-center sm:text-left ">
+                  An immersive way to experience entertainment
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#EDEDED] flex  items-center gap-4  sm:gap-8  sm:py-20 sm:w-2/3">
+          <div className="flex flex-col items-center  ml-8 gap-4 sm:gap-8 sm:py-18 sm:w-2/3">
+            <h1 className="text-2xl sm:text-4xl font-semibold text-center sm:text-left">
+              Macbook Air
+            </h1>
+            <p className="text-[#909090] text-sm sm:text-base text-center sm:text-left">
+              The new 15‑inch MacBook Air makes room for more of what you love
+              with a spacious Liquid Retina display.
+            </p>
+            <button className="px-4 py-2 border-2 w-1/2 sm:w-1/3 border-black rounded-md text-center">
+              Shop Now
+            </button>
+          </div>
           <div>
-            <img src={p1} alt="Product Image" />
-          </div>
-          <div className="flex gap-6 mt-6 sm:w-1/2">
-            <img src={p2} alt="Product Image" />
-            <img src={p3} alt="Product Image" />
+            <img
+              src={p4}
+              alt="MacBook Image"
+              className=" mt-6 sm:block hidden"
+            />
           </div>
         </div>
-        <div className="bg-[#EDEDED] flex flex-col items-center gap-4 sm:gap-8 py-12 sm:py-20 sm:w-2/3">
-          <h1 className="text-2xl sm:text-4xl font-semibold text-center sm:text-left">
-            Macbook Air
-          </h1>
-          <p className="text-[#909090] text-sm sm:text-base text-center sm:text-left">
-            The new 15‑inch MacBook Air makes room for more of what you love
-            with a spacious Liquid Retina display.
-          </p>
-          <button className="px-4 py-2 border-2 w-1/2 sm:w-1/3 border-black rounded-md text-center">
-            Shop Now
-          </button>
-        </div>
-        <img
-          src={p4}
-          alt="MacBook Image"
-          className="w-full sm:w-[40vh] mt-6 sm:mt-0"
-        />
       </div>
 
       {/* Browse By Category */}
@@ -225,11 +262,11 @@ const Home = () => {
           <a href="">Featured Products</a>
         </div>
         <Link to="/ProductDetails">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </Link>
       </div>
 
