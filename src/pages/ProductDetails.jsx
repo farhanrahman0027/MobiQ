@@ -9,7 +9,7 @@ import p5 from "../assets/productdetails/phone1/p5.svg";
 
 const ProductDetails = () => {
   return (
-    <div className=" lg: py-10 bg-white">
+    <div className=" lg: py-10 bg-white px-20">
       {/* Breadcrumb Section */}
       <div className="text-gray-500 text-sm py-4">
         <nav>

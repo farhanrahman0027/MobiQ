@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
-import { FiSearch } from 'react-icons/fi';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // Track menu state
@@ -10,8 +10,7 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen); // Toggle menu visibility
 
   return (
-    <div className="px-6 sm:px-12 lg:px-20 py-6 flex flex-col lg:flex-row items-center justify-between gap-6">
-      
+    <div className="px-6 sm:px-12 lg:px-20 py-6 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-md z-10">
       {/* Logo Section */}
       <div className="font-bold text-xl">
         <h1>MobiQ</h1>
@@ -41,22 +40,32 @@ const Header = () => {
       {/* Navigation Links (Mobile Menu) */}
       <div
         className={`${
-          menuOpen ? 'block' : 'hidden'
+          menuOpen ? "block" : "hidden"
         } lg:flex flex-col lg:flex-row gap-4 lg:gap-6 list-none font-semibold text-center lg:text-left`}
       >
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contactus">Contact Us</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contactus">Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
       </div>
 
       {/* Icons Section (Adjusting for Mobile) */}
       <div className="flex space-x-4 lg:space-x-6">
         <FaHeart className="text-xl sm:text-2xl" />
-        <FaShoppingCart className="text-xl sm:text-2xl" />
+        <Link to="../ShoppingCart">
+          <FaShoppingCart className="text-xl sm:text-2xl" />
+        </Link>
+
         <FaUser className="text-xl sm:text-2xl" />
       </div>
-      
     </div>
   );
 };
